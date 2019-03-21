@@ -317,20 +317,40 @@ cc_defaults {
             ],
         },
         x86_64: {
-            srcs: [
+
+		sse4_1: {
+            		srcs: [
                 // Note that the fault_handler_x86.cc is not a mistake.  This file is
                 // shared between the x86 and x86_64 architectures.
-                "interpreter/mterp/mterp.cc",
-                "interpreter/mterp/out/mterp_x86_64.S",
-                "arch/x86_64/context_x86_64.cc",
-                "arch/x86_64/entrypoints_init_x86_64.cc",
-                "arch/x86_64/jni_entrypoints_x86_64.S",
-                "arch/x86_64/memcmp16_x86_64.S",
-                "arch/x86_64/quick_entrypoints_x86_64.S",
-                "arch/x86_64/thread_x86_64.cc",
-                "monitor_pool.cc",
-                "arch/x86/fault_handler_x86.cc",
-            ],
+                		"interpreter/mterp/mterp.cc",
+               			"interpreter/mterp/out/mterp_x86_64.S",
+		                "arch/x86_64/context_x86_64.cc",
+                		"arch/x86_64/entrypoints_init_x86_64.cc",
+		                "arch/x86_64/jni_entrypoints_x86_64.S",
+                		"arch/x86_64/memcmp16_x86_64.S",
+		                "arch/x86_64/quick_entrypoints_x86_64.S",
+                		"arch/x86_64/thread_x86_64.cc",
+		                "monitor_pool.cc",
+                		"arch/x86/fault_handler_x86.cc",
+            		],
+		},
+		
+		avx2: {
+            		srcs: [
+                // Note that the fault_handler_x86.cc is not a mistake.  This file is
+                // shared between the x86 and x86_64 architectures.
+                		"interpreter/mterp/mterp.cc",
+               			"interpreter/mterp/out/mterp_x86_641.S",
+		                "arch/x86_64/context_x86_64.cc",
+                		"arch/x86_64/entrypoints_init_x86_64.cc",
+		                "arch/x86_64/jni_entrypoints_x86_64.S",
+                		"arch/x86_64/memcmp16_x86_64.S",
+		                "arch/x86_64/quick_entrypoints_x86_64.S",
+                		"arch/x86_64/thread_x86_64.cc",
+		                "monitor_pool.cc",
+                		"arch/x86/fault_handler_x86.cc",
+            		],
+		},
         },
         mips: {
             srcs: [
